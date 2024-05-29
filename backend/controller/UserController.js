@@ -44,7 +44,7 @@ module.exports = class UserController{
             name,
             email,
             password:passwordHash,
-        })
+        }) 
 
         try{
             const newUser= await user.save()

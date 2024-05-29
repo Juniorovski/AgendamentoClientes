@@ -15,6 +15,6 @@ const AgendaRouters = require('./routers/AgendaRouters')
 app.use('/users', UserRouters);
 app.use('/agendas',AgendaRouters);
 
-app.listen(5000,()=>{
- 
+app.listen(5000,(req,res)=>{
+  console.log('Servidor online');
 });
