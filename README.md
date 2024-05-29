@@ -9,7 +9,7 @@ Aplicativo desenvolvido para agendamento para clientes de barbearia.
 ##Instalação
 1. Clone o repósitorio:
  ```sh
-origin https://github.com/Juniorovski/projeto_Agendamento.git
+origin https://github.com/Juniorovski/AgendamentoClientes.git
 ```
 ##Dependências
 
