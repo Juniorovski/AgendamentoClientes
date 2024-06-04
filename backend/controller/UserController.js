@@ -32,7 +32,6 @@ module.exports = class UserController{
           return;
       }
   
-
         const userExists = await User.findOne({email:email})
           if(userExists){
             res.status(422).json({message:'Email  já cadastrado!'});
@@ -120,7 +119,7 @@ module.exports = class UserController{
        const token = getToken(req);
        const user = await getUserByToken(token);
 
-        const {name,email,password,confirmpassword}= req.body;
+        const {name,email}= req.body;
 
         if(req.file){
          user.image = req.file.filename
@@ -148,7 +147,7 @@ module.exports = class UserController{
       }
       user.email= email;
     
-      if(password !== confirmpassword){
+     /* if(password !== confirmpassword){
         res.status(422).json({message:"password e confirmpassword precisam serem iguais!"})
         return;
     }else if(password === confirmpassword && password != null){
@@ -156,7 +155,7 @@ module.exports = class UserController{
       const passwordHash = await bcrypt.hash(password,salt);
 
         user.password = passwordHash;
-    }
+    }*/
      try {
 
        await User.findOneAndUpdate(
