@@ -55,7 +55,6 @@ origin https://github.com/Juniorovski/AgendamentoClientes.git
  ```sh
 3. Como usar:
  Para iniciar o backend  execute ``npm start``;
- Inicie o frontend com `` npm run start``;
 ```
 
 
