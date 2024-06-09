@@ -2,7 +2,7 @@ const Agenda = require('../models/Agenda');
 
 module.exports = class AgendaController{
     static async createAgenda(req,res){
-     const {  agendamento, horario}= req.body;
+     const {  agendamento, horario,servico}= req.body;
 
      if(!agendamento){
         res.status(422).json({message:"Date is required!"});
@@ -10,6 +10,10 @@ module.exports = class AgendaController{
     }
     if(!horario){
         res.status(422).json({message:"Hours is required"});
+        return;
+    }
+    if(!servico){
+        res.status(422).json({message:'Service is required'});
         return;
     }
     const agendaExists = await Agenda.findOne({horario})
@@ -20,6 +24,7 @@ module.exports = class AgendaController{
     const agenda = new Agenda({
         agendamento,
         horario,
+        servico,
         
     })
     try {

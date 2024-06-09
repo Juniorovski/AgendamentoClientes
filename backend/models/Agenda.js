@@ -14,6 +14,10 @@ const Agenda = mongoose.model(
             type:String,
             required:true
         },
+        servico:{
+            type:String,
+            required:true
+        },
        /* user:{
             type:Schema.Types.ObjectId,
             ref:'User',
